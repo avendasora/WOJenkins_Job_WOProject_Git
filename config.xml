@@ -155,7 +155,7 @@ You can specify the version of Apple WebObjects™ to use, the repository and br
   <concurrentBuild>false</concurrentBuild>
   <builders>
     <hudson.tasks.Shell>
-      <command>${WORKSPACE}/WOJenkins/Build/WonderProjects/setupWonderProjectWorkspace.sh</command>
+      <command>${WORKSPACE}/WOJenkins/Build/WonderProjects/WorkspaceSetupScripts/setupWonderProjectWorkspace.sh</command>
     </hudson.tasks.Shell>
     <hudson.tasks.Ant>
       <targets>build -verbose -propertyfile ${WORKSPACE}/Root/build.properties -lib ${WORKSPACE}/Root/lib/woproject.jar</targets>
@@ -168,14 +168,6 @@ You can specify the version of Apple WebObjects™ to use, the repository and br
       <artifacts>**/dist/*.tar.gz</artifacts>
       <latestOnly>false</latestOnly>
     </hudson.tasks.ArtifactArchiver>
-    <hudson.tasks.BuildTrigger>
-      <childProjects>Wonder_Application</childProjects>
-      <threshold>
-        <name>SUCCESS</name>
-        <ordinal>0</ordinal>
-        <color>BLUE</color>
-      </threshold>
-    </hudson.tasks.BuildTrigger>
   </publishers>
   <buildWrappers/>
 </project>
