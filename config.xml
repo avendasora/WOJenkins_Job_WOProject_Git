@@ -25,14 +25,19 @@ You can specify the version of Apple WebObjects™ to use, the repository and br
     <hudson.model.ParametersDefinitionProperty>
       <parameterDefinitions>
         <hudson.model.StringParameterDefinition>
-          <name>PROJECT_GIT_REPOSITORY</name>
-          <description>The Git repository that holds the project you want to build.</description>
-          <defaultValue>https://github.com/daveeed/SimpleBlog.git</defaultValue>
-        </hudson.model.StringParameterDefinition>
-        <hudson.model.StringParameterDefinition>
           <name>PROJECT_NAME</name>
           <description>What is the name of the WOFramework or WOApplication project in the repository that you want to build?</description>
           <defaultValue>SimpleBlogLogic</defaultValue>
+        </hudson.model.StringParameterDefinition>
+        <hudson.model.StringParameterDefinition>
+          <name>DEPLOYED_APPLICATION_NAME</name>
+          <description>&lt;b&gt;**OPTIONAL**&lt;/b&gt; this setting allows you to specify a different name for an Application when it is built. Technically, it overrides the value in the project&apos;s build.properties file. If you leave it blank, it will simply use the PROJECT_NAME value, which should match the name in the build.properties file.</description>
+          <defaultValue></defaultValue>
+        </hudson.model.StringParameterDefinition>
+        <hudson.model.StringParameterDefinition>
+          <name>PROJECT_GIT_REPOSITORY</name>
+          <description>The Git repository that holds the project you want to build.</description>
+          <defaultValue>https://github.com/daveeed/SimpleBlog.git</defaultValue>
         </hudson.model.StringParameterDefinition>
         <hudson.model.StringParameterDefinition>
           <name>PROJECT_GIT_REFERENCE</name>
