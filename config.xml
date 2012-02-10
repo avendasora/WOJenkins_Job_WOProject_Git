@@ -163,7 +163,7 @@ You can specify the version of Apple WebObjects™ to use, the repository and br
       <command>${WORKSPACE}/WOJenkins/Build/Wonder/WorkspaceSetupScripts/Git/setupWonderWorkspace.sh</command>
     </hudson.tasks.Shell>
     <hudson.tasks.Ant>
-      <targets>build -verbose -propertyfile ${WORKSPACE}/Root/build.properties -lib ${WORKSPACE}/Root/lib/woproject.jar</targets>
+      <targets>build -verbose -propertyfile ${WORKSPACE}/Root/hudson.build.properties -lib ${WORKSPACE}/Root/lib/woproject.jar</targets>
       <buildFile>Projects/${PROJECT_NAME}/build.xml</buildFile>
       <properties>Projects/${PROJECT_NAME}/</properties>
     </hudson.tasks.Ant>
