@@ -97,7 +97,7 @@ You can specify the version of Apple WebObjects™ to use, the repository and br
         </userRemoteConfigs>
         <branches>
           <hudson.plugins.git.BranchSpec>
-            <name>origin/${PROJECT_GIT_REFERENCE}</name>
+            <name>${PROJECT_GIT_REFERENCE}</name>
           </hudson.plugins.git.BranchSpec>
         </branches>
         <recursiveSubmodules>false</recursiveSubmodules>
@@ -160,10 +160,10 @@ You can specify the version of Apple WebObjects™ to use, the repository and br
   <concurrentBuild>false</concurrentBuild>
   <builders>
     <hudson.tasks.Shell>
-      <command>${WORKSPACE}/WOJenkins/Build/Wonder/WorkspaceSetupScripts/Git/setupWonderWorkspace.sh</command>
+      <command>${WORKSPACE}/WOJenkins/Build/WonderProjects/WorkspaceSetupScripts/setupWonderProjectWorkspace.sh</command>
     </hudson.tasks.Shell>
     <hudson.tasks.Ant>
-      <targets>build -verbose -propertyfile ${WORKSPACE}/Root/hudson.build.properties -lib ${WORKSPACE}/Root/lib/woproject.jar</targets>
+      <targets>build -verbose -propertyfile ${WORKSPACE}/Root/jenkins.build.properties -lib ${WORKSPACE}/Root/lib/woproject.jar</targets>
       <buildFile>Projects/${PROJECT_NAME}/build.xml</buildFile>
       <properties>Projects/${PROJECT_NAME}/</properties>
     </hudson.tasks.Ant>
